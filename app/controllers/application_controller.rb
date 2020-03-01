@@ -8,14 +8,14 @@ get '/' do
   erb :super_hero
 end 
 
-post '/team' do 
+post '/teams' do 
   @team = Team.new(params[:team])
-   params[:team][:members].each do |details|
-        Member.new(details)
-      end
-      @members = Member.all
+  params[:team][:members].each do |details|
+  Member.new(details)
+  end
+  @members = Member.all
   
-erb :team 
+  erb :team 
 end 
 
 
